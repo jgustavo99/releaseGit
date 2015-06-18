@@ -6,7 +6,7 @@ class Database
 	private $user;
 	private $password;
 	private $dbname;
-	public $query;
+	private $query;
 
 	function __construct($server, $user, $password, $dbname)
 	{
@@ -24,7 +24,7 @@ class Database
 
 	public function setQuery($query)
 	{
-		$this->query = $query;
+		$this->query = $this->conn->query($query);
 	}
 
 	public function getQuery($query)
